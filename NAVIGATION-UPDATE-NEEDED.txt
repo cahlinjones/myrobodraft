@@ -1,0 +1,16 @@
+IMPORTANT: The following 2 files still need navigation updates:
+
+1. contact.html
+2. quote-request.html
+
+These files currently have the old navigation. To update them:
+
+1. Open each file
+2. Replace the <nav> section (lines 28-83 approximately) with the new navigation from index.html
+3. Replace the <div class="mobile-menu"> section with the new one from index.html
+4. Update the footer with the new footer from index.html
+
+The HubSpot forms and all functionality will continue to work - only the navigation needs updating.
+
+Alternatively, these pages work fine as-is - the navigation just won't have the mega menu dropdown, 
+but all links still function correctly.

@@ -1,0 +1,57 @@
+# Netlify configuration for Robo Mow Robo Mow & Snow Snow (NEW DOMAIN)
+# Deploy this file to myrobopro.com
+
+# Build settings
+[build]
+  publish = "."
+
+# Redirect rules for www to non-www
+[[redirects]]
+  from = "https://www.myrobopro.com/*"
+  to = "https://myrobopro.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://myrobopro.com/*"
+  to = "https://myrobopro.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.myrobopro.com/*"
+  to = "https://myrobopro.com/:splat"
+  status = 301
+  force = true
+
+# Headers for caching and security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache CSS and JS for 1 year
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images for 1 year
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Don't cache HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
