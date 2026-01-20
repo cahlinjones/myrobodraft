@@ -1,0 +1,65 @@
+🖼️ MEGA MENU IMAGES REQUIRED
+
+The mega menu now displays small images next to each product name when you hover over "Products".
+
+You need to add these 23 images to: images/mega-menu/
+
+RESIDENTIAL LAWN ROBOTS (6 images):
+✅ yarbo-core.jpg
+✅ yarbo-snow-blower.jpg
+✅ yarbo-lawn-mower.jpg
+✅ yarbo-lawn-mower-pro.jpg
+✅ yarbo-leaf-blower.jpg
+✅ yarbo-trimmer.jpg
+
+COMMERCIAL LAWN ROBOTS (6 images):
+✅ sveaverken-thor.jpg
+✅ mammotion-luba.jpg
+✅ echo-tm1000.jpg
+✅ echo-tm1050.jpg
+✅ echo-tm2000.jpg
+✅ echo-tm2050.jpg
+
+COMMERCIAL FLOOR CLEANERS (6 images):
+✅ pudu-cc1.jpg
+✅ pudu-cc1-pro.jpg
+✅ pudu-mt1.jpg
+✅ pudu-mt1-vac.jpg
+✅ sveabot-s100-pro-m.jpg
+✅ sveabot-s100-pro-r.jpg
+
+PACKAGES (5 images):
+✅ 4in1-yard-robot.jpg
+✅ 5in1-yard-robot.jpg
+✅ snow-lawn-combo.jpg
+✅ lawn-leaf-combo.jpg
+✅ snow-leaf-combo.jpg
+
+📐 IMAGE SPECIFICATIONS:
+- Size: 50x50 pixels (they display small in the menu)
+- Format: JPG
+- Should be: Product photo on white/transparent background
+- Keeps file size small for fast loading
+
+💡 QUICK TIP:
+You can use the same images as your product listing images,
+just resize them to 50x50px for the mega menu.
+
+🔄 TEMPORARY SOLUTION:
+If you don't have images yet, the site will show a grey placeholder box.
+Add the images gradually as you get them!
+
+📁 FOLDER STRUCTURE:
+your-website/
+├── images/
+│   ├── logo.png
+│   ├── placeholder-robot.jpg
+│   ├── residential-lawn-robots.jpg (homepage)
+│   ├── commercial-lawn-robots.jpg (homepage)
+│   ├── commercial-floor-cleaners.jpg (homepage)
+│   └── mega-menu/
+│       ├── yarbo-core.jpg
+│       ├── yarbo-snow-blower.jpg
+│       ├── mammotion-luba.jpg
+│       ├── pudu-cc1.jpg
+│       └── ... (all 23 product images)
