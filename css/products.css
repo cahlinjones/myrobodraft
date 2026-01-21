@@ -484,3 +484,23 @@
         font-size: 0.875rem;
     }
 }
+
+/* Product Image Gallery Enhancements */
+.product-main-image img {
+    transition: opacity 0.3s ease;
+}
+
+.product-thumbnail {
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.product-thumbnail:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.product-thumbnail.active {
+    opacity: 1;
+    border-color: var(--primary);
+}

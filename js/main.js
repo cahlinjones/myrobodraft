@@ -364,6 +364,41 @@ function initBackToTop() {
     });
 }
 
+// Product Image Gallery (for product detail pages)
+function initProductGallery() {
+    const mainImage = document.querySelector('.product-main-image img');
+    const thumbnails = document.querySelectorAll('.product-thumbnail');
+    
+    if (!mainImage || thumbnails.length === 0) {
+        return; // Not on a product page
+    }
+    
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // Remove active class from all thumbnails
+            thumbnails.forEach(t => t.classList.remove('active'));
+            
+            // Add active class to clicked thumbnail
+            this.classList.add('active');
+            
+            // Get the image source from the clicked thumbnail
+            const thumbnailImg = this.querySelector('img');
+            const newSrc = thumbnailImg.src;
+            
+            // Update main image with fade effect
+            mainImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                mainImage.src = newSrc;
+                mainImage.style.opacity = '1';
+            }, 200);
+        });
+        
+        // Add pointer cursor
+        thumbnail.style.cursor = 'pointer';
+    });
+}
+
 // Initialize all functions when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
@@ -374,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
     highlightActivePage();
     initLazyLoading();
     initBackToTop();
+    initProductGallery(); // Add product gallery functionality
     addFadeInStyles();
     addAnimationKeyframes();
 });
