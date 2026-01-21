@@ -242,21 +242,22 @@ button {
 
 /* Mega Menu */
 .nav-item {
-    position: relative;
+    position: static;
 }
 
-/* Create invisible hover extender below Products link */
-.nav-item::before {
+/* Create hover bridge - fills gap between nav and mega menu */
+.nav-item::after {
     content: '';
-    position: absolute;
-    bottom: -2rem;
+    position: fixed;
+    top: 5rem;
     left: 0;
     right: 0;
     height: 2rem;
     pointer-events: none;
+    z-index: 998;
 }
 
-.nav-item:hover::before {
+.nav-item:hover::after {
     pointer-events: all;
 }
 
@@ -268,18 +269,17 @@ button {
     width: 100%;
     background: var(--white);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    padding: 2rem 0 3rem 0;
-    margin-top: 0;
+    padding: 3rem 0;
     opacity: 0;
     visibility: hidden;
-    transition: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
     pointer-events: none;
-    z-index: 998;
+    z-index: 999;
     border-top: 1px solid var(--slate-200);
 }
 
 .nav-item:hover .mega-menu,
-.nav-item:hover::before,
+.nav-item:hover ~ .mega-menu,
 .mega-menu:hover {
     opacity: 1;
     visibility: visible;
@@ -289,19 +289,7 @@ button {
 .mega-menu-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    padding: 0 4rem;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-/* Ensure navigation stays on top */
-#navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
+    gap: 2.5rem;
 }
 
 .mega-menu-section h3 {
@@ -1046,216 +1034,4 @@ button {
     font-size: 1rem;
     color: var(--slate-600);
     font-weight: 500;
-}
-
-/* Mega Menu Mobile Responsive */
-@media (max-width: 1200px) {
-    .mega-menu-content {
-        padding: 0 2rem;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .mega-menu-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .mega-menu {
-        display: none;
-    }
-}
-
-/* How It Works Section */
-.how-it-works {
-    padding: 8rem 0;
-    background: var(--slate-50);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
-    margin-top: 4rem;
-}
-
-.step-card {
-    background: var(--white);
-    padding: 3rem 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-base);
-    position: relative;
-}
-
-.step-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-}
-
-.step-number {
-    width: 4rem;
-    height: 4rem;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 auto 1.5rem;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-}
-
-.step-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--slate-900);
-}
-
-.step-card p {
-    color: var(--slate-600);
-    line-height: 1.7;
-}
-
-/* Brands Section */
-.brands-section {
-    padding: 8rem 0;
-    background: var(--white);
-}
-
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-.brand-card {
-    background: var(--slate-50);
-    padding: 2.5rem 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
-    transition: all var(--transition-base);
-    border: 2px solid transparent;
-}
-
-.brand-card:hover {
-    border-color: var(--primary);
-    background: var(--white);
-    box-shadow: var(--shadow-lg);
-}
-
-.brand-logo-placeholder {
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    background: var(--white);
-    border-radius: 0.5rem;
-    padding: 1rem;
-}
-
-.brand-logo-placeholder h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin: 0;
-}
-
-.brand-card p {
-    color: var(--slate-600);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* Mobile Responsive for New Sections */
-@media (max-width: 768px) {
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .brands-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-    
-    .how-it-works {
-        padding: 4rem 0;
-    }
-    
-    .brands-section {
-        padding: 4rem 0;
-    }
-}
-
-/* Hero and Category Cards Mobile Responsive */
-@media (max-width: 1024px) {
-    .hero-categories {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .hero-category-card {
-        height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        min-height: auto;
-        padding-top: 8rem;
-        padding-bottom: 3rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-description {
-        font-size: 1.125rem;
-        margin-bottom: 3rem;
-    }
-    
-    .hero-category-card {
-        height: 250px;
-    }
-    
-    .hero-category-card h3 {
-        font-size: 1.5rem;
-    }
-    
-    .hero-category-card p {
-        font-size: 1rem;
-    }
-}
-
-/* Benefits Section Mobile */
-@media (max-width: 1024px) {
-    .benefits-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefits-visual {
-        margin-top: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-    
-    .stat-card {
-        padding: 1.5rem 1rem;
-    }
-    
-    .stat-number {
-        font-size: 2rem;
-    }
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5CW38NC15L"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,311 +8,149 @@
       gtag('js', new Date());
       gtag('config', 'G-5CW38NC15L');
     </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Get a Custom Quote | Robo Mow & Snow - Utah's Premier Robotic Lawn Care</title>
-    <meta name="description" content="Get a custom quote for Yarbo robotic lawn care and snow removal. Professional installation and maintenance packages available throughout Utah.">
-    <link rel="canonical" href="https://myrobopro.com/quote-request.html">
-    
+    <title>Yarbo Core | Residential Lawn Robot | My Robo</title>
+    <meta name="description" content="The foundation of your automated lawn care system. Modular platform design allows you to add snow blowing, mowing, leaf blowing, and trimming capabilities as needed for complete year-round property maintenance.">
+    <link rel="canonical" href="https://myrobopro.com/product-yarbo-core.html">
     <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        .quote-hero {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            padding: 8rem 0 4rem;
-            text-align: center;
-            color: white;
-        }
-        
-        .quote-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: white;
-        }
-        
-        .quote-hero p {
-            font-size: 1.25rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
-        
-        .quote-form-section {
-            padding: 4rem 0 8rem;
-            background: #f9fafb;
-        }
-        
-        .quote-form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 1.5rem;
-            padding: 3rem;
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-section {
-            margin-bottom: 2.5rem;
-        }
-        
-        .form-section h3 {
-            font-size: 1.5rem;
-            color: #1e293b;
-            margin-bottom: 1rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .form-group label .required {
-            color: #ef4444;
-        }
-        
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.2s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2d6a4f;
-            box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .checkbox-group {
-            margin-top: 1rem;
-        }
-        
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        
-        .checkbox-item input[type="checkbox"] {
-            width: 1.25rem;
-            height: 1.25rem;
-            margin-right: 0.75rem;
-            cursor: pointer;
-        }
-        
-        .checkbox-item label {
-            margin: 0;
-            font-weight: 400;
-            cursor: pointer;
-        }
-        
-        .form-note {
-            font-size: 0.875rem;
-            color: #64748b;
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
-        
-        .submit-section {
-            margin-top: 3rem;
-            text-align: center;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
-            color: white;
-            padding: 1.25rem 3rem;
-            border: none;
-            border-radius: 0.75rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.4);
-        }
-        
-        .privacy-note {
-            margin-top: 2rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: #64748b;
-        }
-        
-        .privacy-note a {
-            color: #2d6a4f;
-            text-decoration: underline;
-        }
-        
-        .benefits-sidebar {
-            background: linear-gradient(135deg, #f8fdf9 0%, #e8f5f0 100%);
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .benefits-sidebar h4 {
-            font-size: 1.25rem;
-            color: #1e293b;
-            margin-bottom: 1.5rem;
-        }
-        
-        .benefit-item {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            align-items: start;
-        }
-        
-        .benefit-item svg {
-            width: 1.5rem;
-            height: 1.5rem;
-            color: #2d6a4f;
-            flex-shrink: 0;
-            margin-top: 0.25rem;
-        }
-        
-        /* HubSpot Form Styling */
-        .hs-form-frame {
-            width: 100%;
-        }
-        
-        .quote-form-container .hs-form {
-            font-family: inherit;
-        }
-        
-        .quote-form-container .hs-form label {
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 0.5rem;
-        }
-        
-        .quote-form-container .hs-form input[type="text"],
-        .quote-form-container .hs-form input[type="email"],
-        .quote-form-container .hs-form input[type="tel"],
-        .quote-form-container .hs-form input[type="number"],
-        .quote-form-container .hs-form select,
-        .quote-form-container .hs-form textarea {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-        
-        .quote-form-container .hs-form input:focus,
-        .quote-form-container .hs-form select:focus,
-        .quote-form-container .hs-form textarea:focus {
-            outline: none;
-            border-color: #2d6a4f;
-            box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.1);
-        }
-        
-        .quote-form-container .hs-submit .actions {
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .quote-form-container .hs-button {
-            background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%) !important;
-            color: white !important;
-            padding: 1.25rem 3rem !important;
-            border: none !important;
-            border-radius: 0.75rem !important;
-            font-size: 1.125rem !important;
-            font-weight: 700 !important;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.3);
-        }
-        
-        .quote-form-container .hs-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(45, 106, 79, 0.4);
-        }
-        
-        .quote-form-container .hs-form fieldset {
-            max-width: 100% !important;
-        }
-        
-        @media (max-width: 768px) {
-            .quote-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .quote-form-container {
-                padding: 2rem 1.5rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
     <nav id="navbar">
         <div class="container">
             <div class="nav-content">
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                        <img src="images/robo-mow-and-snow-logo.jpg" alt="Robo Mow & Snow Logo" style="width: 100%; height: 100%; object-fit: contain;">
-                    </div>
-                    <div class="logo-text">
-                        <h1>Robo Mow & Snow</h1>
-                        <p>AUTOMATED LAWN CARE</p>
-                    </div>
-                </a>
+                <div class="logo">
+                    <div class="logo-icon"><img src="images/logo.png" alt="My Robo Logo"></div>
+                    <div class="logo-text"><h1>My Robo</h1><p>AUTOMATED SOLUTIONS</p></div>
+                </div>
                 <div class="nav-links desktop-nav">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
-                    <a href="lawn-mowers.html">Lawn Mowers</a>
-                    <a href="snow-blower.html">Snow Blower</a>
+                    <div class="nav-item">
+                        <a href="products.html" class="active">Products</a>
+                        <div class="mega-menu">
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-section">
+                                    <h3><a href="products.html?category=residential-lawn">Residential Lawn Robots</a></h3>
+                                    <ul>
+                                        <li><a href="product-yarbo-core.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-core.jpg" alt="Yarbo Core"></div>
+                                            <div class="mega-menu-item-text">Yarbo Core</div>
+                                        </a></li>
+                                        <li><a href="product-yarbo-snow-blower.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-snow-blower.jpg" alt="Yarbo Snow Blower"></div>
+                                            <div class="mega-menu-item-text">Yarbo Snow Blower</div>
+                                        </a></li>
+                                        <li><a href="product-yarbo-lawn-mower.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-lawn-mower.jpg" alt="Yarbo Lawn Mower"></div>
+                                            <div class="mega-menu-item-text">Yarbo Lawn Mower</div>
+                                        </a></li>
+                                        <li><a href="product-yarbo-lawn-mower-pro.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-lawn-mower-pro.jpg" alt="Yarbo Lawn Mower Pro"></div>
+                                            <div class="mega-menu-item-text">Yarbo Lawn Mower Pro</div>
+                                        </a></li>
+                                        <li><a href="product-yarbo-leaf-blower.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-leaf-blower.jpg" alt="Yarbo Leaf Blower"></div>
+                                            <div class="mega-menu-item-text">Yarbo Leaf Blower</div>
+                                        </a></li>
+                                        <li><a href="product-yarbo-trimmer.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/yarbo-trimmer.jpg" alt="Yarbo Trimmer"></div>
+                                            <div class="mega-menu-item-text">Yarbo Trimmer</div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-section">
+                                    <h3><a href="products.html?category=commercial-lawn">Commercial Lawn Robots</a></h3>
+                                    <ul>
+                                        <li><a href="product-sveaverken-thor.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/sveaverken-thor.jpg" alt="Sveaverken Thor"></div>
+                                            <div class="mega-menu-item-text">Sveaverken Thor</div>
+                                        </a></li>
+                                        <li><a href="product-mammotion-luba.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/mammotion-luba.jpg" alt="MAMMOTION LUBA 3 AWD"></div>
+                                            <div class="mega-menu-item-text">MAMMOTION LUBA 3 AWD</div>
+                                        </a></li>
+                                        <li><a href="product-echo-tm1000.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/echo-tm1000.jpg" alt="Echo TM-1000"></div>
+                                            <div class="mega-menu-item-text">Echo TM-1000</div>
+                                        </a></li>
+                                        <li><a href="product-echo-tm1050.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/echo-tm1050.jpg" alt="Echo TM-1050"></div>
+                                            <div class="mega-menu-item-text">Echo TM-1050</div>
+                                        </a></li>
+                                        <li><a href="product-echo-tm2000.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/echo-tm2000.jpg" alt="Echo TM-2000"></div>
+                                            <div class="mega-menu-item-text">Echo TM-2000</div>
+                                        </a></li>
+                                        <li><a href="product-echo-tm2050.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/echo-tm2050.jpg" alt="Echo TM-2050"></div>
+                                            <div class="mega-menu-item-text">Echo TM-2050</div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-section">
+                                    <h3><a href="products.html?category=commercial-floor">Commercial Floor Cleaners</a></h3>
+                                    <ul>
+                                        <li><a href="product-pudu-cc1.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/pudu-cc1.jpg" alt="Pudu CC1"></div>
+                                            <div class="mega-menu-item-text">Pudu CC1</div>
+                                        </a></li>
+                                        <li><a href="product-pudu-cc1-pro.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/pudu-cc1-pro.jpg" alt="Pudu CC1 Pro"></div>
+                                            <div class="mega-menu-item-text">Pudu CC1 Pro</div>
+                                        </a></li>
+                                        <li><a href="product-pudu-mt1.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/pudu-mt1.jpg" alt="Pudu MT1"></div>
+                                            <div class="mega-menu-item-text">Pudu MT1</div>
+                                        </a></li>
+                                        <li><a href="product-pudu-mt1-vac.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/pudu-mt1-vac.jpg" alt="Pudu MT1 Vac"></div>
+                                            <div class="mega-menu-item-text">Pudu MT1 Vac</div>
+                                        </a></li>
+                                        <li><a href="product-sveabot-s100-pro-m.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/sveabot-s100-pro-m.jpg" alt="Sveabot S100 Pro M"></div>
+                                            <div class="mega-menu-item-text">Sveabot S100 Pro M</div>
+                                        </a></li>
+                                        <li><a href="product-sveabot-s100-pro-r.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/sveabot-s100-pro-r.jpg" alt="Sveabot S100 Pro R"></div>
+                                            <div class="mega-menu-item-text">Sveabot S100 Pro R</div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                <div class="mega-menu-section">
+                                    <h3><a href="products.html?category=packages">Packages</a></h3>
+                                    <ul>
+                                        <li><a href="product-4in1-yard-robot.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/4in1-yard-robot.jpg" alt="4-in-1 Yard Robot"></div>
+                                            <div class="mega-menu-item-text">4-in-1 Yard Robot</div>
+                                        </a></li>
+                                        <li><a href="product-5in1-yard-robot.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/5in1-yard-robot.jpg" alt="5-in-1 Yard Robot"></div>
+                                            <div class="mega-menu-item-text">5-in-1 Yard Robot</div>
+                                        </a></li>
+                                        <li><a href="product-snow-lawn-combo.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/snow-lawn-combo.jpg" alt="Snow + Lawn Combo"></div>
+                                            <div class="mega-menu-item-text">Snow + Lawn Combo</div>
+                                        </a></li>
+                                        <li><a href="product-lawn-leaf-combo.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/lawn-leaf-combo.jpg" alt="Lawn + Leaf Combo"></div>
+                                            <div class="mega-menu-item-text">Lawn + Leaf Combo</div>
+                                        </a></li>
+                                        <li><a href="product-snow-leaf-combo.html">
+                                            <div class="mega-menu-item-image"><img src="images/mega-menu/snow-leaf-combo.jpg" alt="Snow + Leaf Combo"></div>
+                                            <div class="mega-menu-item-text">Snow + Leaf Combo</div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="services.html">Services</a>
                     <a href="contact.html">Contact</a>
-                    <a href="quote-request.html" class="btn-primary active">Get a Quote</a>
+                    <a href="quote-request.html" class="btn-primary">Get Quote</a>
                 </div>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="document.getElementById('mobileMenu').classList.toggle('active'); this.classList.toggle('active');">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
@@ -322,11 +159,10 @@
         <div class="mobile-menu-content">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="lawn-mowers.html">Lawn Mowers</a>
-            <a href="snow-blower.html">Snow Blower</a>
+            <a href="products.html" class="active">All Products</a>
             <a href="services.html">Services</a>
             <a href="contact.html">Contact</a>
-            <a href="quote-request.html" class="btn-primary active">Get a Quote</a>
+            <a href="quote-request.html" class="btn-primary">Get Quote</a>
         </div>
     </div>
 
@@ -348,33 +184,41 @@
                 <div class="benefits-sidebar">
                     <h4>What Happens Next?</h4>
                     <div class="benefit-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6L9 17l-5-5"/>
-                        </svg>
+                        <div class="benefit-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
                         <div>
                             <strong>We'll review your request</strong> within 24 hours
                         </div>
                     </div>
                     <div class="benefit-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6L9 17l-5-5"/>
-                        </svg>
+                        <div class="benefit-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
                         <div>
                             <strong>You'll receive a detailed quote</strong> via email with equipment, installation, and maintenance options
                         </div>
                     </div>
                     <div class="benefit-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6L9 17l-5-5"/>
-                        </svg>
+                        <div class="benefit-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
                         <div>
                             <strong>We'll schedule a consultation</strong> to discuss your property needs and answer questions
                         </div>
                     </div>
                     <div class="benefit-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 6L9 17l-5-5"/>
-                        </svg>
+                        <div class="benefit-icon check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
                         <div>
                             <strong>No obligation</strong> - get informed pricing before making any decisions
                         </div>
@@ -388,31 +232,27 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
-                        <div class="logo-icon">
-                            <img src="images/robo-mow-and-snow-logo.jpg" alt="Robo Mow & Snow Logo" style="width: 100%; height: 100%; object-fit: contain;">
-                        </div>
-                        <div>
-                            <h3>Robo Mow & Snow</h3>
-                            <p>Automated Lawn Care</p>
-                        </div>
-                    </a>
-                    <p class="footer-desc">Revolutionary autonomous lawn mowers and snow blowers throughout Utah. Yarbo dealer with professional installation and service.</p>
-                    <div class="footer-badge">Pending Yarbo Dealer</div>
+                    <div class="footer-logo">
+                        <div class="logo-icon"><img src="images/logo.png" alt="My Robo Logo"></div>
+                        <div><h3>My Robo</h3><p>Automated Solutions</p></div>
+                    </div>
+                    <p class="footer-desc">Utah's premier dealer for residential and commercial robotic solutions.</p>
+                    <div class="footer-badge">Authorized Multi-Brand Dealer</div>
                 </div>
                 <div class="footer-col">
                     <h4>Products</h4>
                     <ul>
-                        <li><a href="lawn-mowers.html">Lawn Mowers</a></li>
-                        <li><a href="snow-blower.html">Snow Blower</a></li>
-                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html?category=residential-lawn">Residential Lawn</a></li>
+                        <li><a href="products.html?category=commercial-lawn">Commercial Lawn</a></li>
+                        <li><a href="products.html?category=commercial-floor">Floor Cleaners</a></li>
+                        <li><a href="products.html?category=packages">Packages</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="quote-request.html">Get a Quote</a></li>
+                        <li><a href="services.html">Services</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -430,7 +270,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="/cdn-cgi/l/email-protection#94f7fbfae0f5f7e0d4f9ede6fbf6fbe4e6fbbaf7fbf9"><span class="__cf_email__" data-cfemail="12717d7c66737166527f6b607d707d62607d3c717d7f">[email&#160;protected]</span></a>
+                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
