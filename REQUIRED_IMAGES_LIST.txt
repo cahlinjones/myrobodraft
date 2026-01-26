@@ -1,0 +1,150 @@
+REQUIRED PRODUCT IMAGES FOR NEW MAMMOTION PAGES
+===============================================
+
+You will need to add a total of 20 product images (5 images per product).
+Each product needs the following 5 images:
+
+IMAGE NAMING CONVENTION:
+- Main product image (used in thumbnails and main view)
+- Side view image
+- Action shot (mower in use)
+- Detail/close-up image
+- Additional thumbnail image
+
+==============================================
+1. MAMMOTION LUBA mini AWD (5 images)
+==============================================
+
+1. mammotion-luba-mini-awd-main.webp
+   - Main product photo (front/front-angle view)
+   - Used in: Product thumbnails, mega menu, main product image
+
+2. mammotion-luba-mini-awd-side.webp
+   - Side profile view
+   - Used in: Product gallery thumbnail
+
+3. mammotion-luba-mini-awd-action.webp
+   - Mower in action on a lawn
+   - Used in: Product gallery thumbnail
+
+4. mammotion-luba-mini-awd-detail.webp
+   - Close-up of key features (controls, cutting deck, etc.)
+   - Used in: Product gallery thumbnail
+
+5. mammotion-luba-mini-awd-thumb.webp (OPTIONAL)
+   - Alternative thumbnail view
+   - Currently using main.webp in 4th position
+
+
+==============================================
+2. MAMMOTION YUKA mini 2 (5 images)
+==============================================
+
+6. mammotion-yuka-mini-2-main.webp
+   - Main product photo (front/front-angle view)
+   - Used in: Product thumbnails, mega menu, main product image
+
+7. mammotion-yuka-mini-2-side.webp
+   - Side profile view
+   - Used in: Product gallery thumbnail
+
+8. mammotion-yuka-mini-2-action.webp
+   - Mower in action on a lawn
+   - Used in: Product gallery thumbnail
+
+9. mammotion-yuka-mini-2-detail.webp
+   - Close-up of key features
+   - Used in: Product gallery thumbnail
+
+10. mammotion-yuka-mini-2-thumb.webp (OPTIONAL)
+    - Alternative thumbnail view
+
+
+==============================================
+3. MAMMOTION YUKA mini (5 images)
+==============================================
+
+11. mammotion-yuka-mini-main.webp
+    - Main product photo (front/front-angle view)
+    - Used in: Product thumbnails, mega menu, main product image
+
+12. mammotion-yuka-mini-side.webp
+    - Side profile view
+    - Used in: Product gallery thumbnail
+
+13. mammotion-yuka-mini-action.webp
+    - Mower in action on a lawn
+    - Used in: Product gallery thumbnail
+
+14. mammotion-yuka-mini-detail.webp
+    - Close-up of key features
+    - Used in: Product gallery thumbnail
+
+15. mammotion-yuka-mini-thumb.webp (OPTIONAL)
+    - Alternative thumbnail view
+
+
+==============================================
+4. MAMMOTION YUKA (5 images)
+==============================================
+
+16. mammotion-yuka-main.webp
+    - Main product photo (front/front-angle view)
+    - Used in: Product thumbnails, mega menu, main product image
+
+17. mammotion-yuka-side.webp
+    - Side profile view
+    - Used in: Product gallery thumbnail
+
+18. mammotion-yuka-action.webp
+    - Mower in action on a lawn
+    - Used in: Product gallery thumbnail
+
+19. mammotion-yuka-detail.webp
+    - Close-up of key features
+    - Used in: Product gallery thumbnail
+
+20. mammotion-yuka-thumb.webp (OPTIONAL)
+    - Alternative thumbnail view
+
+
+==============================================
+IMAGE SPECIFICATIONS:
+==============================================
+
+Format: WebP (.webp)
+Recommended Size: 800x800px to 1200x1200px
+Aspect Ratio: 1:1 (square) or 4:3
+Quality: High (suitable for web)
+Background: Clean/white background preferred for product shots
+
+==============================================
+WHERE TO PLACE IMAGES:
+==============================================
+
+All images should be placed in the /images/ directory of your website.
+
+Full path example: /images/mammotion-luba-mini-awd-main.webp
+
+
+==============================================
+NOTES:
+==============================================
+
+✓ Each product page uses 4 thumbnails in the gallery
+✓ The main image is also used as the first thumbnail
+✓ If you only have 4 images per product total, use the main image twice (once as main, once as thumbnail)
+✓ Action shots showing the mower on a real lawn are most effective for conversions
+✓ Detail shots should highlight unique features (motors, navigation sensors, control panel, etc.)
+
+==============================================
+QUICK CHECKLIST:
+==============================================
+
+□ 5 images for LUBA mini AWD
+□ 5 images for YUKA mini 2
+□ 5 images for YUKA mini
+□ 5 images for YUKA
+□ All images in .webp format
+□ All images placed in /images/ directory
+□ Image filenames match exactly as listed above
