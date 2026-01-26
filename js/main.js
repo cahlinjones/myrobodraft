@@ -410,6 +410,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initLazyLoading();
     initBackToTop();
     initProductGallery(); // Add product gallery functionality
+    initTabbedMegaMenu(); // Initialize tabbed mega menu
+    initProductFiltering(); // Initialize product page filtering
     addFadeInStyles();
     addAnimationKeyframes();
 });
@@ -443,3 +445,124 @@ window.TerrainTrace = {
     initSmoothScroll,
     highlightActivePage
 };
+// ========================================
+// TABBED MEGA MENU FUNCTIONALITY
+// ========================================
+function initTabbedMegaMenu() {
+    const megaMenuTabs = document.querySelectorAll('.mega-menu-tab');
+    const megaMenuCategories = document.querySelectorAll('.mega-menu-category');
+    
+    if (megaMenuTabs.length === 0 || megaMenuCategories.length === 0) {
+        console.log('Tabbed mega menu elements not found');
+        return;
+    }
+    
+    console.log(`Found ${megaMenuTabs.length} tabs and ${megaMenuCategories.length} categories`);
+    
+    function switchCategory(tab) {
+        // Remove active class from all tabs and categories
+        megaMenuTabs.forEach(t => t.classList.remove('active'));
+        megaMenuCategories.forEach(c => c.classList.remove('active'));
+        
+        // Add active class to current tab
+        tab.classList.add('active');
+        
+        // Show corresponding category
+        const category = tab.getAttribute('data-category');
+        console.log('Switching to category:', category);
+        
+        const activeCategory = document.querySelector(`.mega-menu-category[data-category="${category}"]`);
+        if (activeCategory) {
+            activeCategory.classList.add('active');
+            console.log('Activated category:', category);
+        } else {
+            console.error('Category not found:', category);
+        }
+    }
+    
+    megaMenuTabs.forEach(tab => {
+        // Handle mouse hover - show products without navigating
+        tab.addEventListener('mouseenter', function() {
+            switchCategory(this);
+        });
+        
+        // Click is allowed to navigate to products page with filter
+        // No preventDefault needed - let the link work naturally
+    });
+    
+    console.log('Tabbed mega menu initialized successfully');
+    console.log('Hover to preview, click to filter products page');
+}
+
+
+// ========================================
+// PRODUCT FILTERING FUNCTIONALITY
+// ========================================
+function initProductFiltering() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    
+    if (filterButtons.length === 0 || productCards.length === 0) {
+        return; // Not on products page
+    }
+    
+    console.log('Product filtering initialized');
+    
+    // Function to filter products
+    function filterProducts(category) {
+        console.log('Filtering by category:', category);
+        
+        productCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'block';
+                // Add fade-in animation
+                card.style.animation = 'fadeIn 0.5s ease';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Update active button
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        const activeButton = document.querySelector(`.filter-btn[data-category="${category}"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
+        
+        // Update URL without reloading page
+        const url = new URL(window.location);
+        if (category === 'all') {
+            url.searchParams.delete('category');
+        } else {
+            url.searchParams.set('category', category);
+        }
+        window.history.pushState({}, '', url);
+    }
+    
+    // Check URL parameters on page load
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    
+    if (categoryParam) {
+        console.log('URL parameter found:', categoryParam);
+        filterProducts(categoryParam);
+    } else {
+        console.log('No URL parameter, showing all products');
+    }
+    
+    // Add click handlers to filter buttons
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            filterProducts(category);
+        });
+    });
+    
+    console.log('Product filtering ready');
+}
+

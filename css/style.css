@@ -213,6 +213,10 @@ button {
     gap: 2rem;
 }
 
+.nav-links > * {
+    flex-shrink: 0;
+}
+
 .nav-links a {
     font-family: var(--font-system);
     font-size: 0.95rem;
@@ -220,6 +224,7 @@ button {
     color: var(--slate-700);
     transition: color var(--transition-base);
     position: relative;
+    display: inline-block;
 }
 
 .nav-links a:hover {
@@ -240,9 +245,26 @@ button {
     background: var(--primary);
 }
 
-/* Mega Menu */
+/* Nav Item (Products dropdown wrapper) */
 .nav-item {
     position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.nav-item > a {
+    display: inline-block;
+    font-family: var(--font-system);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    transition: color var(--transition-base);
+    position: relative;
+}
+
+.nav-item > a:hover,
+.nav-item:hover > a {
+    color: var(--primary);
 }
 
 /* Create invisible hover extender below Products link */
@@ -260,6 +282,8 @@ button {
     pointer-events: all;
 }
 
+/* Mega Menu - Tabbed Interface */
+/* Tabbed Mega Menu Styles */
 .mega-menu {
     position: fixed;
     top: 5rem;
@@ -268,18 +292,26 @@ button {
     width: 100%;
     background: var(--white);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    padding: 2rem 0 3rem 0;
+    padding: 0;
     margin-top: 0;
     opacity: 0;
     visibility: hidden;
-    transition: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition-delay: 0.1s;
     pointer-events: none;
     z-index: 998;
     border-top: 1px solid var(--slate-200);
 }
 
-.nav-item:hover .mega-menu,
-.nav-item:hover::before,
+/* Only show mega menu when hovering specifically over the nav-item */
+.nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition-delay: 0s;
+}
+
+/* Keep mega menu visible when hovering over it */
 .mega-menu:hover {
     opacity: 1;
     visibility: visible;
@@ -287,88 +319,160 @@ button {
 }
 
 .mega-menu-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
-    padding: 0 4rem;
+    display: flex;
     max-width: 1400px;
     margin: 0 auto;
+    min-height: 400px;
 }
 
-/* Ensure navigation stays on top */
-#navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Sidebar with category tabs */
+.mega-menu-sidebar {
+    width: 280px;
+    background: var(--slate-50);
+    border-right: 1px solid var(--slate-200);
+    padding: 2rem 0;
+    flex-shrink: 0;
+}
+
+.mega-menu-tab {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate-700);
+    background: transparent;
+    border: none;
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-system);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    text-decoration: none;
+}
+
+.mega-menu-tab:hover {
+    background: var(--slate-100);
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.mega-menu-tab.active {
     background: var(--white);
-    box-shadow: var(--shadow-sm);
+    color: var(--primary);
+    border-left-color: var(--primary);
 }
 
-.mega-menu-section h3 {
-    font-size: 1.125rem;
+/* Products display area */
+.mega-menu-products-area {
+    flex: 1;
+    padding: 2.5rem 3rem;
+    overflow-y: auto;
+    max-height: 600px;
+}
+
+.mega-menu-category {
+    display: none;
+}
+
+.mega-menu-category.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mega-menu-category h3 {
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--slate-900);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     padding-bottom: 0.75rem;
     border-bottom: 2px solid var(--primary);
 }
 
-.mega-menu-section h3 a {
-    color: var(--slate-900);
-    font-size: 1.125rem;
-    font-weight: 700;
-}
-
-.mega-menu-section h3 a:hover {
-    color: var(--primary);
-}
-
-.mega-menu-products {
+/* Product grid */
+.mega-menu-grid {
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
 }
 
-.mega-menu-product {
-    display: block;
+.mega-menu-product-card {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     border-radius: 0.75rem;
     overflow: hidden;
-    transition: all var(--transition-base);
+    transition: all 0.2s ease;
     border: 2px solid transparent;
+    background: var(--white);
 }
 
-.mega-menu-product:hover {
+.mega-menu-product-card:hover {
     border-color: var(--primary);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
-.mega-menu-product-image {
+.mega-menu-card-image {
     width: 100%;
     height: 140px;
     background: var(--slate-100);
     overflow: hidden;
     border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
-.mega-menu-product-image img {
+.mega-menu-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mega-menu-product-name {
+.mega-menu-card-text {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--slate-700);
     text-align: center;
-    padding: 0.5rem;
-    transition: color var(--transition-fast);
+    padding: 0 0.5rem 0.75rem 0.5rem;
+    line-height: 1.3;
 }
 
-.mega-menu-product:hover .mega-menu-product-name {
+.mega-menu-product-card:hover .mega-menu-card-text {
     color: var(--primary);
 }
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .mega-menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1.25rem;
+    }
+    
+    .mega-menu-card-image {
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mega-menu {
+        display: none; /* Hide on mobile, use mobile menu instead */
+    }
+}
+
 
 /* Mobile Menu */
 .mobile-menu-btn {
@@ -530,7 +634,7 @@ button {
     min-height: 95vh;
     display: flex;
     align-items: center;
-    padding-top: 6rem;
+    padding-top: 10rem;
     padding-bottom: 4rem;
     background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
     overflow: hidden;
