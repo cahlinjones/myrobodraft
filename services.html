@@ -431,49 +431,12 @@
                 </div>
                 <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html?category=residential-lawn">Residential Lawn</a></li><li><a href="products.html?category=commercial-lawn">Commercial Lawn</a></li><li><a href="products.html?category=commercial-floor">Floor Cleaners</a></li><li><a href="products.html?category=packages">Packages</a></li></ul></div>
                 <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-                <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13856660336">(385) 666-0336</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving All of Utah</span></li></ul></div>
+                <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13856660336">(385) 666-0336</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="/cdn-cgi/l/email-protection#791a16170d181a0d3914000b161b16090b16571a1614"><span class="__cf_email__" data-cfemail="1d7e7273697c7e695d70646f727f726d6f72337e7270">[email&#160;protected]</span></a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving All of Utah</span></li></ul></div>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="fa    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        // Pricing toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const billingBtns = document.querySelectorAll('.billing-btn');
-            const prices = document.querySelectorAll('.price');
-            const billingCycles = document.querySelectorAll('.billing-cycle');
-            
-            billingBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Update active state
-                    billingBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const period = this.getAttribute('data-period');
-                    
-                    // Update prices
-                    prices.forEach(price => {
-                        const monthly = price.getAttribute('data-monthly');
-                        const yearly = price.getAttribute('data-yearly');
-                        price.textContent = period === 'monthly' ? monthly : yearly;
-                    });
-                    
-                    // Update billing cycle text
-                    billingCycles.forEach((cycle, index) => {
-                        const monthlyPrices = ['$49', '$149', '$199'];
-                        const yearlyPrices = ['$499', '$1,524', '$2,028'];
-                        
-                        if (period === 'monthly') {
-                            cycle.textContent = `monthly at ${monthlyPrices[index]}`;
-                        } else {
-                            cycle.textContent = `annually at ${yearlyPrices[index]}`;
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
