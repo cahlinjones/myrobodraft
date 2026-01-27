@@ -10,25 +10,24 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yarbo Core | Residential Lawn Robot | My Robo</title>
-    <meta name="description" content="The foundation of your automated lawn care system. Modular platform design allows you to add snow blowing, mowing, leaf blowing, and trimming capabilities as needed for complete year-round property maintenance.">
-    <link rel="canonical" href="https://myrobopro.com/product-yarbo-core.html">
+    <title>Maintenance Packages | My Robo Pro</title>
+    <meta name="description" content="Professional maintenance packages for residential and commercial robotic solutions. Choose the perfect service plan for your property.">
+    <link rel="canonical" href="https://myrobopro.com/services.html">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/products.css">
 </head>
 <body>
     <nav id="navbar">
         <div class="container">
             <div class="nav-content">
                 <div class="logo">
-                    <div class="logo-icon"><img src="images/logo.png" alt="My Robo Logo"></div>
-                    <div class="logo-text"><h1>My Robo</h1><p>AUTOMATED SOLUTIONS</p></div>
+                    <div class="logo-icon"><img src="images/logo.png" alt="My Robo Pro Logo"></div>
+                    <div class="logo-text"><h1>My Robo Pro</h1><p>AUTOMATED SOLUTIONS</p></div>
                 </div>
                 <div class="nav-links desktop-nav">
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <div class="nav-item">
-                        <a href="products.html">Products</a>
+                        <a href="products.html">Products <svg class="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="currentColor"><path d="M1 1l5 5 5-5"/></svg></a>
                         <div class="mega-menu">
                             <div class="mega-menu-content">
                                 <div class="mega-menu-sidebar">
@@ -117,7 +116,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    
                                     <div class="mega-menu-category" data-category="commercial-lawn">
                                         <h3>Commercial Lawn Robots</h3>
                                         <div class="mega-menu-grid">
@@ -129,9 +127,9 @@
                                             </a>
                                             <a href="product-sveaverken-thor.html" class="mega-menu-product-card">
                                                 <div class="mega-menu-card-image">
-                                                    <img src="images/sveaverken-thor-main.webp" alt="Sveaverken Thor">
+                                                    <img src="images/sveaverken-thor-main.webp" alt="Sveaverken THOR">
                                                 </div>
-                                                <div class="mega-menu-card-text">Sveaverken Thor</div>
+                                                <div class="mega-menu-card-text">Sveaverken THOR</div>
                                             </a>
                                             <a href="product-echo-tm1000.html" class="mega-menu-product-card">
                                                 <div class="mega-menu-card-image">
@@ -159,7 +157,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    
                                     <div class="mega-menu-category" data-category="commercial-floor">
                                         <h3>Commercial Floor Cleaners</h3>
                                         <div class="mega-menu-grid">
@@ -189,7 +186,6 @@
                                             </a>
                                         </div>
                                     </div>
-                                    
                                     <div class="mega-menu-category" data-category="packages">
                                         <h3>Packages</h3>
                                         <div class="mega-menu-grid">
@@ -242,69 +238,242 @@
         <div class="mobile-menu-content">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="products.html" class="active">All Products</a>
-            <a href="services.html">Services</a>
+            <a href="products.html">All Products</a>
+            <a href="services.html" class="active">Services</a>
             <a href="contact.html">Contact</a>
             <a href="quote-request.html" class="btn-primary">Get Quote</a>
         </div>
     </div>
 
-    <section class="page-hero">
-        <div class="page-hero-background"></div>
+    <section class="services-hero">
+        <div class="hero-background"><img src="images/hero-services-bg.jpg" alt="Background" /></div>
         <div class="container">
-            <div class="page-hero-content"><h1>Our Services</h1><p>Complete solutions from installation to ongoing support</p></div>
+            <div class="services-hero-content">
+                <h1>Professional Maintenance Packages</h1>
+                <p>Keep your robotic equipment running at peak performance with our comprehensive service plans</p>
+            </div>
         </div>
     </section>
 
-    <section class="features" style="padding: 6rem 0;">
+    <section class="pricing-section">
         <div class="container">
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                    <h3>Professional Installation</h3>
-                    <p>Complete system setup with expert configuration, property mapping, and comprehensive training to ensure optimal performance from day one.</p>
+            <!-- Billing Toggle -->
+            <div class="billing-toggle-wrapper">
+                <div class="billing-toggle">
+                    <button class="billing-btn active" data-period="monthly">Monthly</button>
+                    <button class="billing-btn" data-period="yearly">
+                        Yearly
+                        <span class="save-badge">Save 15%</span>
+                    </button>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-                    <h3>Maintenance Packages</h3>
-                    <p>Priority service with system health monitoring, software updates, parts coverage, and dedicated support throughout the year.</p>
+                <div class="pricing-note">All prices in USD</div>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="pricing-grid">
+                <!-- Residential Package -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Residential</h3>
+                        <p class="pricing-description">Essential maintenance for homeowners with robotic lawn equipment</p>
+                    </div>
+                    
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price" data-monthly="49" data-yearly="42">49</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="billing-note-small">Billed <span class="billing-cycle">monthly at $49</span></div>
+                    
+                    <a href="quote-request.html?package=residential" class="btn-quote">Request Quote</a>
+                    
+                    <div class="pricing-features">
+                        <h4>All plans include:</h4>
+                        <ul>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Annual system health check</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Software updates & optimization</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Priority phone & email support</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>10% discount on parts & repairs</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Remote diagnostics assistance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Commercial Lawn Package -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <h3>Commercial Lawn</h3>
+                        <p class="pricing-description">Advanced service for commercial properties and large-scale operations</p>
+                    </div>
+                    
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price" data-monthly="149" data-yearly="127">149</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="billing-note-small">Billed <span class="billing-cycle">monthly at $149</span></div>
+                    
+                    <a href="quote-request.html?package=commercial-lawn" class="btn-quote featured">Request Quote</a>
+                    
+                    <div class="pricing-features">
+                        <h4>Everything from Residential, plus:</h4>
+                        <ul>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Quarterly on-site inspections</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Extended parts warranty coverage</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Priority repair service (48hr response)</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Blade sharpening & replacement</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Battery health monitoring & replacement</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Seasonal performance tuning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Commercial Floor Package -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Commercial Floor Cleaning</h3>
+                        <p class="pricing-description">Complete maintenance for commercial floor cleaning robots</p>
+                    </div>
+                    
+                    <div class="pricing-amount">
+                        <span class="currency">$</span>
+                        <span class="price" data-monthly="199" data-yearly="169">199</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <div class="billing-note-small">Billed <span class="billing-cycle">monthly at $199</span></div>
+                    
+                    <a href="quote-request.html?package=commercial-floor" class="btn-quote">Request Quote</a>
+                    
+                    <div class="pricing-features">
+                        <h4>Everything from Commercial Lawn, plus:</h4>
+                        <ul>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Monthly on-site maintenance visits</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Filter & brush replacement included</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Emergency 24/7 support hotline</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Dedicated service technician</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Loaner unit during repairs</span>
+                            </li>
+                            <li>
+                                <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+                                <span>Custom service schedule available</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="why-choose" style="padding: 8rem 0; background: var(--slate-50);">
-        <div class="container">
-            <div class="section-header centered"><span class="section-label">Installation Service</span><h2>What's Included</h2></div>
-            <div class="benefits-list" style="max-width: 900px; margin: 0 auto;">
-                <div class="benefit-item"><div class="benefit-icon check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Site Assessment</h4><p>Property evaluation for optimal placement and coverage</p></div></div>
-                <div class="benefit-item"><div class="benefit-icon check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Professional Setup</h4><p>Complete installation and calibration by factory-trained technicians</p></div></div>
-                <div class="benefit-item"><div class="benefit-icon check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Property Mapping</h4><p>Complete boundary, zone, and path configuration</p></div></div>
-                <div class="benefit-item"><div class="benefit-icon check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div><h4>Training & Support</h4><p>Comprehensive user training and ongoing technical support</p></div></div>
+            <!-- Additional Info -->
+            <div class="pricing-footer">
+                <p>All maintenance packages include professional installation support. Custom enterprise packages available for properties with multiple units.</p>
+                <p><strong>Need help choosing?</strong> <a href="contact.html">Contact us</a> for a personalized consultation.</p>
             </div>
         </div>
     </section>
 
-    <section class="final-cta">
-        <div class="container">
-            <div class="cta-content"><h2>Ready to Get Started?</h2><p>Contact us to discuss installation and maintenance packages for your property.</p>
-                <div class="cta-buttons"><a href="quote-request.html" class="btn-large btn-white">Request Quote</a><a href="tel:+13856660336" class="btn-large btn-secondary-white">(385) 666-0336</a></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-col"><div class="footer-logo"><div class="logo-icon"><img src="images/logo.png" alt="My Robo Logo"></div><div><h3>My Robo</h3><p>Automated Solutions</p></div></div><p class="footer-desc">Utah's premier dealer for residential and commercial robotic solutions.</p><div class="footer-badge">Authorized Multi-Brand Dealer</div></div>
+                <div class="footer-col main">
+                    <div class="footer-logo">
+                        <div class="logo-icon"><img src="images/logo.png" alt="My Robo Pro Logo"></div>
+                        <div><h3>My Robo Pro</h3><p>Automated Solutions</p></div>
+                    </div>
+                    <p class="footer-desc">Utah's premier dealer for residential and commercial robotic solutions.</p>
+                    <div class="footer-badge">Authorized Multi-Brand Dealer</div>
+                </div>
                 <div class="footer-col"><h4>Products</h4><ul><li><a href="products.html?category=residential-lawn">Residential Lawn</a></li><li><a href="products.html?category=commercial-lawn">Commercial Lawn</a></li><li><a href="products.html?category=commercial-floor">Floor Cleaners</a></li><li><a href="products.html?category=packages">Packages</a></li></ul></div>
                 <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-                                <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13856660336">(385) 666-0336</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving All of Utah</span></li></ul></div>
+                <div class="footer-col"><h4>Contact</h4><ul class="contact-list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+13856660336">(385) 666-0336</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Serving All of Utah</span></li></ul></div>
             </div>
         </div>
     </footer>
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Pricing toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const billingBtns = document.querySelectorAll('.billing-btn');
+            const prices = document.querySelectorAll('.price');
+            const billingCycles = document.querySelectorAll('.billing-cycle');
+            
+            billingBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active state
+                    billingBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const period = this.getAttribute('data-period');
+                    
+                    // Update prices
+                    prices.forEach(price => {
+                        const monthly = price.getAttribute('data-monthly');
+                        const yearly = price.getAttribute('data-yearly');
+                        price.textContent = period === 'monthly' ? monthly : yearly;
+                    });
+                    
+                    // Update billing cycle text
+                    billingCycles.forEach((cycle, index) => {
+                        const monthlyPrices = ['$49', '$149', '$199'];
+                        const yearlyPrices = ['$499', '$1,524', '$2,028'];
+                        
+                        if (period === 'monthly') {
+                            cycle.textContent = `monthly at ${monthlyPrices[index]}`;
+                        } else {
+                            cycle.textContent = `annually at ${yearlyPrices[index]}`;
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
