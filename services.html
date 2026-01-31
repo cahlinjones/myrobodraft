@@ -478,5 +478,44 @@
 
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Pricing toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const billingBtns = document.querySelectorAll('.billing-btn');
+            const prices = document.querySelectorAll('.price');
+            const billingCycles = document.querySelectorAll('.billing-cycle');
+            
+            billingBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active state
+                    billingBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const period = this.getAttribute('data-period');
+                    
+                    // Update prices
+                    prices.forEach(price => {
+                        const monthly = price.getAttribute('data-monthly');
+                        const yearly = price.getAttribute('data-yearly');
+                        price.textContent = period === 'monthly' ? monthly : yearly;
+                    });
+                    
+                    // Update billing cycle text
+                    billingCycles.forEach((cycle, index) => {
+                        const monthlyPrices = ['$49', '$149', '$199'];
+                        const yearlyPrices = ['$499', '$1,524', '$2,028'];
+                        
+                        if (period === 'monthly') {
+                            cycle.textContent = 'monthly at ' + monthlyPrices[index];
+                        } else {
+                            cycle.textContent = 'annually at ' + yearlyPrices[index];
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
