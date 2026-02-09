@@ -2149,3 +2149,62 @@ button {
 /* ================================================
    END HOMEPAGE IMAGE SECTIONS
    ================================================ */
+
+/* Video Styling for Non-Hero Sections */
+.split-showcase-image video {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    object-fit: contain;
+}
+
+.image-content-image video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+}
+
+/* Animations for Non-Hero Videos */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse-shadow {
+    0%, 100% {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    50% {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Apply animation to split showcase video */
+.split-showcase-image video {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Apply animation to commercial section video */
+.image-content-section.alternate .image-content-image video {
+    animation: pulse-shadow 4s ease-in-out infinite;
+}
+
+
+/* Video Styling for Page Heroes */
+.page-hero-background video,
+.products-hero .hero-background video,
+.services-hero .hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
