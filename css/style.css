@@ -2208,3 +2208,117 @@ button {
     left: 0;
 }
 
+
+/* ================================================
+   MAINTENANCE PACKAGE SELECTOR (Product Pages)
+   ================================================ */
+
+.maintenance-selector {
+    background: var(--slate-50);
+    border: 2px solid var(--slate-200);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2.5rem 0;
+}
+
+.maintenance-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.maintenance-header h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--slate-900);
+    margin: 0;
+}
+
+.maintenance-info svg {
+    color: var(--slate-400);
+    cursor: help;
+}
+
+.maintenance-description {
+    color: var(--slate-600);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.maintenance-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.maintenance-option {
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+
+.maintenance-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.option-content {
+    border: 2px solid var(--slate-300);
+    background: var(--white);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    transition: all var(--transition-base);
+}
+
+.maintenance-option input[type="radio"]:checked ~ .option-content {
+    border-color: var(--primary);
+    background: var(--slate-50);
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.option-name {
+    font-weight: 600;
+    color: var(--slate-900);
+    font-size: 1rem;
+}
+
+.option-price {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.option-desc {
+    color: var(--slate-600);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.maintenance-option:hover .option-content {
+    border-color: var(--primary-light);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .maintenance-selector {
+        padding: 1.5rem;
+        margin: 2rem 0;
+    }
+    
+    .option-content {
+        padding: 0.875rem 1rem;
+    }
+}
+
+/* ================================================
+   END MAINTENANCE PACKAGE SELECTOR
+   ================================================ */

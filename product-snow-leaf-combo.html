@@ -340,6 +340,45 @@
                         </ul>
                     </div>
                     
+
+                    
+                    <div class="maintenance-selector">
+                        <div class="maintenance-header">
+                            <h4>Add a Maintenance Plan</h4>
+                            <span class="maintenance-info">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 16v-4M12 8h.01"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <p class="maintenance-description">Professional maintenance to keep your equipment running at peak performance.</p>
+                        
+                        <div class="maintenance-options">
+                            <label class="maintenance-option">
+                                <input type="radio" name="maintenance" value="Residential Monthly">
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <span class="option-name">Residential - Monthly</span>
+                                        <span class="option-price">$49/mo</span>
+                                    </div>
+                                    <p class="option-desc">Essential maintenance billed monthly</p>
+                                </div>
+                            </label>
+                            
+                            <label class="maintenance-option">
+                                <input type="radio" name="maintenance" value="Residential Yearly">
+                                <div class="option-content">
+                                    <div class="option-header">
+                                        <span class="option-name">Residential - Yearly</span>
+                                        <span class="option-price">$42/mo</span>
+                                    </div>
+                                    <p class="option-desc">Save 15% with annual billing ($504/year)</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
                     <div class="product-actions">
                         <a href="quote-request.html?product_interest=Snow%20%2B%20Leaf%20Combo" class="btn-large btn-primary">Request Quote</a>
                         <a href="tel:+13856660336" class="btn-large btn-secondary">Call (385) 666-0336</a>
@@ -516,7 +555,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
+                            <a href="/cdn-cgi/l/email-protection#f99a96978d989a8db994808b969b96898b96d79a9694"><span class="__cf_email__" data-cfemail="ccafa3a2b8adafb88ca1b5bea3aea3bcbea3e2afa3a1">[email&#160;protected]</span></a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -530,6 +569,17 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
-</body>
-</html>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    <script>
+    // Maintenance Package Selector
+    document.addEventListener('DOMContentLoaded', function() {
+        const maintenanceRadios = document.querySelectorAll('input[name="maintenance"]');
+        const quoteButton = document.querySelector('.product-actions .btn-primary');
+        const originalHref = quoteButton.href;
+        
+        maintenanceRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.checked) {
+                    const maintenancePlan = this.value;
+                    // Update quote button URL with maintenance parameter
+                    const url

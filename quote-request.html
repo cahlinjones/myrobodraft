@@ -369,5 +369,38 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+    // HubSpot Form Pre-population
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const productInterest = urlParams.get('product_interest');
+            const maintenanceInterest = urlParams.get('maintenance_interest');
+            
+            // Pre-populate Product Interest field
+            if (productInterest) {
+                const productField = document.querySelector('select[name="product_interest"], input[name="product_interest"]');
+                if (productField) {
+                    productField.value = decodeURIComponent(productInterest);
+                    // Trigger change event for HubSpot
+                    const changeEvent = new Event('change', { bubbles: true });
+                    productField.dispatchEvent(changeEvent);
+                }
+            }
+            
+            // Pre-populate Maintenance Interest field  
+            if (maintenanceInterest) {
+                const maintenanceField = document.querySelector('select[name="maintenance_interest"], input[name="maintenance_interest"]');
+                if (maintenanceField) {
+                    maintenanceField.value = decodeURIComponent(maintenanceInterest);
+                    // Trigger change event for HubSpot
+                    const changeEvent = new Event('change', { bubbles: true });
+                    maintenanceField.dispatchEvent(changeEvent);
+                }
+            }
+        }
+    });
+    </script>
 </body>
 </html>
