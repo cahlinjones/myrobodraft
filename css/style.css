@@ -1945,3 +1945,41 @@ button {
         grid-template-columns: 1fr;
     }
 }
+
+/* ================================================
+   HERO VIDEO STYLES - Added for video background
+   ================================================ */
+
+/* Make sure the video fills the hero background area */
+.hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Optional: Add a subtle overlay to make text more readable */
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 30% dark overlay */
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Make sure hero content appears above the video */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ================================================
+   END HERO VIDEO STYLES
+   ================================================ */
