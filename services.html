@@ -467,7 +467,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="/cdn-cgi/l/email-protection#2f4c40415b4e4c5b6f42565d404d405f5d40014c4042"><span class="__cf_email__" data-cfemail="9dfef2f3e9fcfee9ddf0e4eff2fff2edeff2b3fef2f0">[email&#160;protected]</span></a>
+                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -476,4 +476,51 @@
                             </svg>
                             <span>Serving All of Utah</span>
                         </li>
-            
+                                </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+    // Billing Toggle Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const billingBtns = document.querySelectorAll('.billing-btn');
+        const prices = document.querySelectorAll('.price');
+        const billingCycles = document.querySelectorAll('.billing-cycle');
+        
+        billingBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const period = this.getAttribute('data-period');
+                
+                // Update active state
+                billingBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update prices
+                prices.forEach(priceEl => {
+                    const monthlyPrice = priceEl.getAttribute('data-monthly');
+                    const yearlyPrice = priceEl.getAttribute('data-yearly');
+                    const newPrice = period === 'monthly' ? monthlyPrice : yearlyPrice;
+                    priceEl.textContent = newPrice;
+                });
+                
+                // Update billing cycle text
+                billingCycles.forEach(cycle => {
+                    const priceEl = cycle.closest('.pricing-card').querySelector('.price');
+                    const price = priceEl.textContent;
+                    
+                    if (period === 'monthly') {
+                        cycle.textContent = `monthly at $${price}`;
+                    } else {
+                        const monthlyPrice = priceEl.getAttribute('data-monthly');
+                        const yearlyTotal = price * 12;
+                        cycle.textContent = `yearly at $${yearlyTotal} (save $${(monthlyPrice * 12 - yearlyTotal).toFixed(0)}/year)`;
+                    }
+                });
+            });
+        });
+    });
+    </script>
+</body>
+</html>
