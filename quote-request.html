@@ -368,7 +368,7 @@
             </div>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script>
     // HubSpot Form Pre-population with improved timing
     window.addEventListener('message', function(event) {
@@ -407,4 +407,13 @@
                         
                         // Force HubSpot to recognize the selection
                         if (maintenanceField.tagName === 'SELECT') {
-                        
+                            maintenanceField.dispatchEvent(new Event('blur', { bubbles: true }));
+                        }
+                    }
+                }
+            }, 500); // 500ms delay to ensure form is ready
+        }
+    });
+    </script>
+</body>
+</html>
