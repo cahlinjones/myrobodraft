@@ -481,7 +481,7 @@
             </div>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
     // Billing Toggle Functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -506,12 +506,4 @@
                 });
                 
                 // Update billing cycle text
-                billingCycles.forEach(cycle => {
-                    const priceEl = cycle.closest('.pricing-card').querySelector('.price');
-                    const price = priceEl.textContent;
-                    
-                    if (period === 'monthly') {
-                        cycle.textContent = `monthly at $${price}`;
-                    } else {
-                        const monthlyPrice = priceEl.getAttribute('data-monthly');
-                        const yearlyTotal = price *
+  

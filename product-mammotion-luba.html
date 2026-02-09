@@ -361,6 +361,7 @@
                     
 
                     
+                    
                     <div class="maintenance-selector">
                         <div class="maintenance-header">
                             <h4>Add a Maintenance Plan</h4>
@@ -393,28 +394,6 @@
                                         <span class="option-price">$42/mo</span>
                                     </div>
                                     <p class="option-desc">Save 15% with annual billing ($504/year)</p>
-                                </div>
-                            </label>
-                            
-                            <label class="maintenance-option">
-                                <input type="radio" name="maintenance" value="Commercial Monthly">
-                                <div class="option-content">
-                                    <div class="option-header">
-                                        <span class="option-name">Commercial - Monthly</span>
-                                        <span class="option-price">$149/mo</span>
-                                    </div>
-                                    <p class="option-desc">Advanced service billed monthly</p>
-                                </div>
-                            </label>
-                            
-                            <label class="maintenance-option">
-                                <input type="radio" name="maintenance" value="Commercial Yearly">
-                                <div class="option-content">
-                                    <div class="option-header">
-                                        <span class="option-name">Commercial - Yearly</span>
-                                        <span class="option-price">$127/mo</span>
-                                    </div>
-                                    <p class="option-desc">Save 15% with annual billing ($1,524/year)</p>
                                 </div>
                             </label>
                         </div>
@@ -651,7 +630,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="/cdn-cgi/l/email-protection#8deee2e3f9eceef9cde0f4ffe2efe2fdffe2a3eee2e0"><span class="__cf_email__" data-cfemail="b8dbd7d6ccd9dbccf8d5c1cad7dad7c8cad796dbd7d5">[email&#160;protected]</span></a>
+                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -665,17 +644,36 @@
             </div>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    </footer>
+    <script src="js/main.js"></script>
     <script>
     // Maintenance Package Selector
     document.addEventListener('DOMContentLoaded', function() {
         const maintenanceRadios = document.querySelectorAll('input[name="maintenance"]');
         const quoteButton = document.querySelector('.product-actions .btn-primary');
-        const originalHref = quoteButton.href;
+        
+        if (!quoteButton) return;
+        
+        const originalHref = quoteButton.getAttribute('href');
         
         maintenanceRadios.forEach(radio => {
             radio.addEventListener('change', function() {
                 if (this.checked) {
                     const maintenancePlan = this.value;
-                    // Update quote button URL with maintenance parameter
-                    const url
+                    
+                    // Parse the original URL
+                    const baseUrl = originalHref.split('?')[0];
+                    const urlParams = new URLSearchParams(originalHref.split('?')[1] || '');
+                    
+                    // Add or update maintenance parameter
+                    urlParams.set('maintenance_interest', maintenancePlan);
+                    
+                    // Update button href
+                    quoteButton.setAttribute('href', baseUrl + '?' + urlParams.toString());
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

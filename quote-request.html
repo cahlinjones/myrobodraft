@@ -368,39 +368,43 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
-    // HubSpot Form Pre-population
+    // HubSpot Form Pre-population with improved timing
     window.addEventListener('message', function(event) {
         if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-            // Get URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const productInterest = urlParams.get('product_interest');
-            const maintenanceInterest = urlParams.get('maintenance_interest');
-            
-            // Pre-populate Product Interest field
-            if (productInterest) {
-                const productField = document.querySelector('select[name="product_interest"], input[name="product_interest"]');
-                if (productField) {
-                    productField.value = decodeURIComponent(productInterest);
-                    // Trigger change event for HubSpot
-                    const changeEvent = new Event('change', { bubbles: true });
-                    productField.dispatchEvent(changeEvent);
+            // Add delay to ensure form is fully rendered
+            setTimeout(function() {
+                // Get URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const productInterest = urlParams.get('product_interest');
+                const maintenanceInterest = urlParams.get('maintenance_interest');
+                
+                // Pre-populate Product Interest field
+                if (productInterest) {
+                    const productField = document.querySelector('select[name="product_interest"]') || 
+                                       document.querySelector('input[name="product_interest"]');
+                    if (productField) {
+                        productField.value = decodeURIComponent(productInterest);
+                        const event = new Event('change', { bubbles: true });
+                        productField.dispatchEvent(event);
+                    }
                 }
-            }
-            
-            // Pre-populate Maintenance Interest field  
-            if (maintenanceInterest) {
-                const maintenanceField = document.querySelector('select[name="maintenance_interest"], input[name="maintenance_interest"]');
-                if (maintenanceField) {
-                    maintenanceField.value = decodeURIComponent(maintenanceInterest);
-                    // Trigger change event for HubSpot
-                    const changeEvent = new Event('change', { bubbles: true });
-                    maintenanceField.dispatchEvent(changeEvent);
-                }
-            }
-        }
-    });
-    </script>
-</body>
-</html>
+                
+                // Pre-populate Maintenance Interest field
+                if (maintenanceInterest) {
+                    const maintenanceField = document.querySelector('select[name="maintenance_interest"]') || 
+                                           document.querySelector('input[name="maintenance_interest"]');
+                    if (maintenanceField) {
+                        const decodedValue = decodeURIComponent(maintenanceInterest);
+                        maintenanceField.value = decodedValue;
+                        
+                        // Trigger multiple events to ensure HubSpot recognizes the change
+                        const changeEvent = new Event('change', { bubbles: true });
+                        const inputEvent = new Event('input', { bubbles: true });
+                        maintenanceField.dispatchEvent(inputEvent);
+                        maintenanceField.dispatchEvent(changeEvent);
+                        
+                        // Force HubSpot to recognize the selection
+                        if (maintenanceField.tagName === 'SELECT') {
+                        

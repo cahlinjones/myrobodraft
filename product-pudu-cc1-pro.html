@@ -555,7 +555,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="/cdn-cgi/l/email-protection#096a66677d686a7d4964707b666b66797b66276a6664"><span class="__cf_email__" data-cfemail="72111d1c06131106321f0b001d101d02001d5c111d1f">[email&#160;protected]</span></a>
+                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -569,17 +569,36 @@
             </div>
         </div>
     </footer>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    </footer>
+    <script src="js/main.js"></script>
     <script>
     // Maintenance Package Selector
     document.addEventListener('DOMContentLoaded', function() {
         const maintenanceRadios = document.querySelectorAll('input[name="maintenance"]');
         const quoteButton = document.querySelector('.product-actions .btn-primary');
-        const originalHref = quoteButton.href;
+        
+        if (!quoteButton) return;
+        
+        const originalHref = quoteButton.getAttribute('href');
         
         maintenanceRadios.forEach(radio => {
             radio.addEventListener('change', function() {
                 if (this.checked) {
                     const maintenancePlan = this.value;
-                    // Update quote button URL with maintenance parameter
-                    const url
+                    
+                    // Parse the original URL
+                    const baseUrl = originalHref.split('?')[0];
+                    const urlParams = new URLSearchParams(originalHref.split('?')[1] || '');
+                    
+                    // Add or update maintenance parameter
+                    urlParams.set('maintenance_interest', maintenancePlan);
+                    
+                    // Update button href
+                    quoteButton.setAttribute('href', baseUrl + '?' + urlParams.toString());
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
