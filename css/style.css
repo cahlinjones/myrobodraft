@@ -1968,3 +1968,184 @@ button {
 /* ================================================
    END HERO VIDEO STYLES
    ================================================ */
+
+/* ================================================
+   HOMEPAGE IMAGE SECTIONS
+   ================================================ */
+
+/* Split Showcase - Unique Design (like Spot example) */
+.split-showcase {
+    position: relative;
+    background: linear-gradient(135deg, #0a1828 0%, #1a2332 50%, #0f1419 100%);
+    overflow: hidden;
+}
+
+.split-showcase-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    align-items: center;
+}
+
+.split-showcase-text {
+    padding: 6rem 4rem 6rem 8rem;
+    color: var(--white);
+}
+
+.split-showcase-text h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+
+.split-showcase-text p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--slate-300);
+    margin-bottom: 2.5rem;
+}
+
+.split-showcase-text .btn-primary {
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    display: inline-block;
+}
+
+.split-showcase-text .btn-primary:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.split-showcase-image {
+    background: #000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.split-showcase-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    object-fit: contain;
+}
+
+/* Standard Image Content Sections */
+.image-content-section {
+    padding: 6rem 0;
+    background: var(--white);
+}
+
+.image-content-section.alternate {
+    background: var(--slate-50);
+}
+
+.image-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.image-content-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-xl);
+}
+
+.image-content-text {
+    padding: 2rem 0;
+}
+
+.image-content-text .section-label {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.image-content-text h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--slate-900);
+    margin-bottom: 1.5rem;
+}
+
+.image-content-text p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--slate-600);
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 0.75rem 0;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--slate-700);
+    font-size: 1.125rem;
+}
+
+.feature-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .split-showcase-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    
+    .split-showcase-text {
+        padding: 4rem 2rem;
+    }
+    
+    .split-showcase-text h2 {
+        font-size: 2rem;
+    }
+    
+    .split-showcase-image {
+        padding: 3rem 2rem;
+    }
+    
+    .image-content-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .image-content-section.alternate .image-content-grid {
+        direction: ltr;
+    }
+    
+    .image-content-text h2 {
+        font-size: 2rem;
+    }
+}
+
+/* ================================================
+   END HOMEPAGE IMAGE SECTIONS
+   ================================================ */
