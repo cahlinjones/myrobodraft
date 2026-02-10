@@ -153,15 +153,35 @@ button {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--white);
+    background: transparent; /* Transparent like Wix */
     z-index: 1000;
     transition: all var(--transition-base);
-    border-bottom: 1px solid transparent;
+    border-bottom: none; /* No border */
+    box-shadow: none; /* No shadow */
 }
 
 #navbar.scrolled {
-    box-shadow: var(--shadow-md);
-    border-bottom-color: var(--slate-200);
+    background: rgba(255, 255, 255, 0.95); /* Subtle white when scrolled */
+    box-shadow: var(--shadow-sm);
+    border-bottom: 1px solid var(--slate-200);
+}
+
+/* White background when mega menu is active - like Tesla */
+.nav-item:hover ~ #navbar,
+#navbar:has(.nav-item:hover) {
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Alternative approach using class on navbar when mega menu is visible */
+.nav-item:hover {
+    --nav-bg: var(--white);
+}
+
+#navbar:has(.mega-menu:hover),
+#navbar:has(.nav-item:hover) {
+    background: var(--white) !important;
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-content {
@@ -194,17 +214,39 @@ button {
 .logo-text h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--slate-900);
+    color: var(--white); /* White on transparent nav */
     margin: 0;
+    transition: color var(--transition-base);
 }
 
 .logo-text p {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: var(--slate-600);
+    color: rgba(255, 255, 255, 0.8); /* Light white on transparent nav */
     text-transform: uppercase;
     margin: 0;
+    transition: color var(--transition-base);
+}
+
+/* Logo colors when scrolled */
+#navbar.scrolled .logo-text h1 {
+    color: var(--slate-900);
+}
+
+#navbar.scrolled .logo-text p {
+    color: var(--slate-600);
+}
+
+/* Logo colors when mega menu is active - like Tesla */
+#navbar:has(.nav-item:hover) .logo-text h1,
+#navbar:has(.mega-menu:hover) .logo-text h1 {
+    color: var(--slate-900);
+}
+
+#navbar:has(.nav-item:hover) .logo-text p,
+#navbar:has(.mega-menu:hover) .logo-text p {
+    color: var(--slate-600);
 }
 
 .nav-links {
@@ -221,18 +263,18 @@ button {
     font-family: var(--font-system);
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--slate-700);
+    color: var(--white); /* White text on transparent nav */
     transition: color var(--transition-base);
     position: relative;
     display: inline-block;
 }
 
 .nav-links a:hover {
-    color: var(--primary);
+    color: var(--slate-200); /* Light grey on hover */
 }
 
 .nav-links a.active {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .nav-links a.active::after {
@@ -242,6 +284,44 @@ button {
     left: 0;
     right: 0;
     height: 2px;
+    background: var(--white);
+}
+
+/* Navbar scrolled state - dark text */
+#navbar.scrolled .nav-links a {
+    color: var(--slate-700);
+}
+
+#navbar.scrolled .nav-links a:hover {
+    color: var(--primary);
+}
+
+#navbar.scrolled .nav-links a.active {
+    color: var(--primary);
+}
+
+#navbar.scrolled .nav-links a.active::after {
+    background: var(--primary);
+}
+
+/* Navbar with mega menu active - dark text like Tesla */
+#navbar:has(.nav-item:hover) .nav-links a,
+#navbar:has(.mega-menu:hover) .nav-links a {
+    color: var(--slate-700);
+}
+
+#navbar:has(.nav-item:hover) .nav-links a:hover,
+#navbar:has(.mega-menu:hover) .nav-links a:hover {
+    color: var(--primary);
+}
+
+#navbar:has(.nav-item:hover) .nav-links a.active,
+#navbar:has(.mega-menu:hover) .nav-links a.active {
+    color: var(--primary);
+}
+
+#navbar:has(.nav-item:hover) .nav-links a.active::after,
+#navbar:has(.mega-menu:hover) .nav-links a.active::after {
     background: var(--primary);
 }
 
@@ -259,7 +339,7 @@ button {
     font-family: var(--font-system);
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--slate-700);
+    color: var(--white);
     transition: color var(--transition-base);
     position: relative;
 }
@@ -277,6 +357,27 @@ button {
 
 .nav-item > a:hover,
 .nav-item:hover > a {
+    color: var(--slate-200);
+}
+
+/* Nav-item colors when scrolled */
+#navbar.scrolled .nav-item > a {
+    color: var(--slate-700);
+}
+
+#navbar.scrolled .nav-item > a:hover,
+#navbar.scrolled .nav-item:hover > a {
+    color: var(--primary);
+}
+
+/* Nav-item colors when mega menu is active - like Tesla */
+#navbar:has(.nav-item:hover) .nav-item > a,
+#navbar:has(.mega-menu:hover) .nav-item > a {
+    color: var(--slate-700);
+}
+
+#navbar:has(.nav-item:hover) .nav-item:hover > a,
+#navbar:has(.mega-menu:hover) .nav-item:hover > a {
     color: var(--primary);
 }
 
@@ -296,7 +397,6 @@ button {
 }
 
 /* Mega Menu - Tabbed Interface */
-/* Tabbed Mega Menu Styles */
 .mega-menu {
     position: fixed;
     top: 5rem;
@@ -639,61 +739,148 @@ button {
 }
 
 /* ========================================
-   HERO SECTION
+   FULL-SCREEN HERO - WIX-STYLE MINIMAL
    ======================================== */
 
-.hero {
+.hero-fullscreen {
     position: relative;
-    min-height: 95vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    align-items: center;
-    padding-top: 10rem;
-    padding-bottom: 4rem;
+    align-items: flex-start; /* Align to top instead of center */
+    justify-content: center;
+    padding-top: 25vh; /* Position text in upper third of screen */
     overflow: hidden;
 }
 
-.hero-background {
+.hero-video-background {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
-    overflow: hidden;
 }
 
-.hero-background img {
+.hero-video-background video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    opacity: 1;
 }
 
-.hero-content {
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+}
+
+.hero-fullscreen-content {
     position: relative;
     z-index: 10;
-    max-width: 100%;
+    text-align: center;
+    max-width: 60rem;
+    padding: 2rem;
+}
+
+.hero-fullscreen-content h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero-fullscreen-content p {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+}
+
+.hero-scroll-indicator {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+.hero-scroll-indicator svg {
+    stroke: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* ========================================
+   SOLUTIONS SECTION - CARDS WITH FADE IN
+   ======================================== */
+
+.solutions-section {
+    position: relative;
+    padding: 8rem 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.03) 0%,
+        rgba(255, 255, 255, 1) 20%,
+        var(--white) 100%
+    );
+}
+
+.section-header {
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto 5rem;
+}
+
+.section-header.centered {
     text-align: center;
 }
 
-.hero h1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    color: var(--white);
+.section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--slate-900);
     margin-bottom: 1.5rem;
     line-height: 1.1;
 }
 
-.hero-description {
-    font-size: 1.5rem;
-    color: var(--slate-200);
+.section-description {
+    font-size: 1.25rem;
+    color: var(--slate-600);
     line-height: 1.7;
-    margin-bottom: 4rem;
-    max-width: 50rem;
-    margin-left: auto;
-    margin-right: auto;
 }
 
+/* Keep existing hero-categories styles */
 .hero-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -755,9 +942,6 @@ button {
     align-self: flex-start;
 }
 
-/* ========================================
-   FEATURES & BENEFITS
-   ======================================== */
 
 .features {
     padding: 8rem 0;
