@@ -324,7 +324,7 @@ function initBackToTop() {
         right: 2rem;
         width: 3rem;
         height: 3rem;
-        background: linear-gradient(135deg, #2d6a4f 0%, #52b788 100%);
+        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
         color: white;
         border: none;
         border-radius: 50%;

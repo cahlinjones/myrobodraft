@@ -817,8 +817,7 @@ button {
 }
 
 .hero-scroll-indicator svg {
-    stroke: white;
-    opacity: 0.9;
+    stroke: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes bounce {
@@ -842,18 +841,22 @@ button {
     padding: 8rem 0;
     background: linear-gradient(
         to bottom,
-        rgba(15, 23, 42, 0.12) 0%,
-        rgba(15, 23, 42, 0.10) 5%,
-        rgba(15, 23, 42, 0.08) 10%,
-        rgba(15, 23, 42, 0.06) 15%,
-        rgba(15, 23, 42, 0.04) 20%,
-        rgba(15, 23, 42, 0.02) 25%,
-        rgba(255, 255, 255, 0.8) 35%,
-        rgba(255, 255, 255, 0.95) 45%,
-        var(--white) 55%,
+        rgba(15, 23, 42, 0.15) 0%,
+        rgba(15, 23, 42, 0.12) 3%,
+        rgba(15, 23, 42, 0.10) 6%,
+        rgba(15, 23, 42, 0.08) 9%,
+        rgba(15, 23, 42, 0.06) 12%,
+        rgba(15, 23, 42, 0.04) 16%,
+        rgba(15, 23, 42, 0.03) 20%,
+        rgba(15, 23, 42, 0.02) 24%,
+        rgba(15, 23, 42, 0.01) 28%,
+        rgba(255, 255, 255, 0.5) 35%,
+        rgba(255, 255, 255, 0.75) 42%,
+        rgba(255, 255, 255, 0.9) 50%,
+        var(--white) 60%,
         var(--white) 100%
     );
-    margin-top: -2px; /* Ensures no gap */
+    margin-top: -3px;
 }
 
 .section-header {
