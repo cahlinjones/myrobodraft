@@ -245,19 +245,14 @@
         </div>
     </div>
 
-    <section class="services-hero">
-        <div class="hero-background">
-            <video autoplay muted loop playsinline poster="images/services-hero-bg.jpg">
-                <source src="images/services-hero-bg.mp4" type="video/mp4">
-                <source src="images/services-hero-bg.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
+    <section class="services-hero-fullscreen">
+        <div class="page-hero-background">
+            <img src="images/robot-showcase-1.mp4" alt="Professional Services">
+            <div class="page-hero-overlay"></div>
         </div>
-        <div class="container">
-            <div class="services-hero-content">
-                <h1>Professional Maintenance Packages</h1>
-                <p>Keep your robotic equipment running at peak performance with our comprehensive service plans</p>
-            </div>
+        <div class="page-hero-content">
+            <h1>Professional Maintenance Packages</h1>
+            <p>Keep your robotic equipment running at peak performance with our comprehensive service plans designed for every need and budget.</p>
         </div>
     </section>
 
@@ -467,7 +462,7 @@
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
                             </svg>
-                            <a href="mailto:contact@myrobopro.com">contact@myrobopro.com</a>
+                            <a href="/cdn-cgi/l/email-protection#0c6f6362786d6f784c61757e636e637c7e63226f6361"><span class="__cf_email__" data-cfemail="c4a7abaab0a5a7b084a9bdb6aba6abb4b6abeaa7aba9">[email&#160;protected]</span></a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -481,7 +476,7 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
     <script>
     // Billing Toggle Functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -514,13 +509,4 @@
                         cycle.textContent = `monthly at $${price}`;
                     } else {
                         const monthlyPrice = priceEl.getAttribute('data-monthly');
-                        const yearlyTotal = price * 12;
-                        cycle.textContent = `yearly at $${yearlyTotal} (save $${(monthlyPrice * 12 - yearlyTotal).toFixed(0)}/year)`;
-                    }
-                });
-            });
-        });
-    });
-    </script>
-</body>
-</html>
+                        const yearlyTotal = price 
