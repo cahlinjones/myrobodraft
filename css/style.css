@@ -145,7 +145,8 @@ button {
 }
 
 /* ========================================
-   NAVIGATION
+/* ========================================
+   NAVIGATION - SIMPLE CENTERED LOGO
    ======================================== */
 
 #navbar {
@@ -153,604 +154,135 @@ button {
     top: 0;
     left: 0;
     right: 0;
-    background: transparent; /* Transparent like Wix */
     z-index: 1000;
-    transition: all var(--transition-base);
-    border-bottom: none; /* No border */
-    box-shadow: none; /* No shadow */
+    padding: 20px 0;
+    background: transparent;
 }
 
-#navbar.scrolled {
-    background: rgba(255, 255, 255, 0.95); /* Subtle white when scrolled */
-    box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid var(--slate-200);
+.navbar-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 48px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* White background when mega menu is active - like Tesla */
-.nav-item:hover ~ #navbar,
-#navbar:has(.nav-item:hover) {
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
-}
-
-/* Alternative approach using class on navbar when mega menu is visible */
-.nav-item:hover {
-    --nav-bg: var(--white);
-}
-
-#navbar:has(.mega-menu:hover),
-#navbar:has(.nav-item:hover) {
-    background: var(--white) !important;
-    box-shadow: var(--shadow-sm);
-}
-
-.nav-content {
+.nav-left,
+.nav-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1rem 0;
+    gap: 32px;
 }
 
-.logo {
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.nav-link {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #334155;
+    text-decoration: none;
+    transition: color 200ms ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-link.active {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.nav-logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 10px;
+    text-decoration: none;
+    transition: opacity 200ms ease;
 }
 
-.logo-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav-logo:hover {
+    opacity: 0.8;
 }
 
-.logo-icon img {
-    max-width: 100%;
-    max-height: 100%;
+.nav-logo img {
+    width: 32px;
+    height: 32px;
     object-fit: contain;
 }
 
-.logo-text h1 {
-    font-size: 1.5rem;
+.nav-logo span {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 18px;
     font-weight: 700;
-    color: var(--white); /* White on transparent nav */
-    margin: 0;
-    transition: color var(--transition-base);
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
 }
 
-.logo-text p {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.8); /* Light white on transparent nav */
-    text-transform: uppercase;
-    margin: 0;
-    transition: color var(--transition-base);
-}
-
-/* Logo colors when scrolled */
-#navbar.scrolled .logo-text h1 {
-    color: var(--slate-900);
-}
-
-#navbar.scrolled .logo-text p {
-    color: var(--slate-600);
-}
-
-/* Logo colors when mega menu is active - like Tesla */
-#navbar:has(.nav-item:hover) .logo-text h1,
-#navbar:has(.mega-menu:hover) .logo-text h1 {
-    color: var(--slate-900);
-}
-
-#navbar:has(.nav-item:hover) .logo-text p,
-#navbar:has(.mega-menu:hover) .logo-text p {
-    color: var(--slate-600);
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
-.nav-links > * {
-    flex-shrink: 0;
-}
-
-.nav-links a {
-    font-family: var(--font-system);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--white); /* White text on transparent nav */
-    transition: color var(--transition-base);
-    position: relative;
-    display: inline-block;
-}
-
-.nav-links a:hover {
-    color: var(--slate-200); /* Light grey on hover */
-}
-
-.nav-links a.active {
-    color: var(--white);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--white);
-}
-
-/* Navbar scrolled state - dark text */
-#navbar.scrolled .nav-links a {
-    color: var(--slate-700);
-}
-
-#navbar.scrolled .nav-links a:hover {
-    color: var(--primary);
-}
-
-#navbar.scrolled .nav-links a.active {
-    color: var(--primary);
-}
-
-#navbar.scrolled .nav-links a.active::after {
-    background: var(--primary);
-}
-
-/* Navbar with mega menu active - dark text like Tesla */
-#navbar:has(.nav-item:hover) .nav-links a,
-#navbar:has(.mega-menu:hover) .nav-links a {
-    color: var(--slate-700);
-}
-
-#navbar:has(.nav-item:hover) .nav-links a:hover,
-#navbar:has(.mega-menu:hover) .nav-links a:hover {
-    color: var(--primary);
-}
-
-#navbar:has(.nav-item:hover) .nav-links a.active,
-#navbar:has(.mega-menu:hover) .nav-links a.active {
-    color: var(--primary);
-}
-
-#navbar:has(.nav-item:hover) .nav-links a.active::after,
-#navbar:has(.mega-menu:hover) .nav-links a.active::after {
-    background: var(--primary);
-}
-
-/* Nav Item (Products dropdown wrapper) */
-.nav-item {
-    position: relative;
-    display: inline-block;
-    flex-shrink: 0;
-}
-
-.nav-item > a {
+.nav-cta {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-system);
-    font-size: 0.95rem;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 15px;
     font-weight: 600;
-    color: var(--white);
-    transition: color var(--transition-base);
-    position: relative;
-}
-
-.dropdown-arrow {
-    transition: transform 0.3s ease;
-    stroke: currentColor;
-    stroke-width: 2;
-    fill: none;
-}
-
-.nav-item:hover .dropdown-arrow {
-    transform: rotate(180deg);
-}
-
-.nav-item > a:hover,
-.nav-item:hover > a {
-    color: var(--slate-200);
-}
-
-/* Nav-item colors when scrolled */
-#navbar.scrolled .nav-item > a {
-    color: var(--slate-700);
-}
-
-#navbar.scrolled .nav-item > a:hover,
-#navbar.scrolled .nav-item:hover > a {
-    color: var(--primary);
-}
-
-/* Nav-item colors when mega menu is active - like Tesla */
-#navbar:has(.nav-item:hover) .nav-item > a,
-#navbar:has(.mega-menu:hover) .nav-item > a {
-    color: var(--slate-700);
-}
-
-#navbar:has(.nav-item:hover) .nav-item:hover > a,
-#navbar:has(.mega-menu:hover) .nav-item:hover > a {
-    color: var(--primary);
-}
-
-/* Create invisible hover extender below Products link */
-.nav-item::before {
-    content: '';
-    position: absolute;
-    bottom: -2rem;
-    left: 0;
-    right: 0;
-    height: 2rem;
-    pointer-events: none;
-}
-
-.nav-item:hover::before {
-    pointer-events: all;
-}
-
-/* Mega Menu - Tabbed Interface */
-.mega-menu {
-    position: fixed;
-    top: 5rem;
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: var(--white);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    padding: 0;
-    margin-top: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    transition-delay: 0.1s;
-    pointer-events: none;
-    z-index: 998;
-    border-top: 1px solid var(--slate-200);
-}
-
-/* Only show mega menu when hovering specifically over the nav-item */
-.nav-item:hover .mega-menu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-    transition-delay: 0s;
-}
-
-/* Keep mega menu visible when hovering over it */
-.mega-menu:hover {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: all;
-}
-
-.mega-menu-content {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-    min-height: 400px;
-}
-
-/* Sidebar with category tabs */
-.mega-menu-sidebar {
-    width: 280px;
-    background: var(--slate-50);
-    border-right: 1px solid var(--slate-200);
-    padding: 2rem 0;
-    flex-shrink: 0;
-}
-
-.mega-menu-tab {
-    display: block;
-    width: 100%;
-    text-align: left;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--slate-700);
-    background: transparent;
-    border: none;
-    border-left: 4px solid transparent;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: var(--font-system);
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
+    border-radius: 10px;
     text-decoration: none;
+    transition: all 200ms ease;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+    white-space: nowrap;
 }
 
-.mega-menu-tab:hover {
-    background: var(--slate-100);
-    color: var(--primary);
-    text-decoration: none;
-}
-
-.mega-menu-tab.active {
-    background: var(--white);
-    color: var(--primary);
-    border-left-color: var(--primary);
-}
-
-/* Products display area */
-.mega-menu-products-area {
-    flex: 1;
-    padding: 2.5rem 3rem;
-    overflow-y: auto;
-    max-height: 600px;
-}
-
-.mega-menu-category {
-    display: none;
-}
-
-.mega-menu-category.active {
-    display: block;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.mega-menu-category h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--slate-900);
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--primary);
-}
-
-/* Product grid */
-.mega-menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 1.5rem;
-}
-
-.mega-menu-product-card {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    transition: all 0.2s ease;
-    border: 2px solid transparent;
-    background: var(--white);
-}
-
-.mega-menu-product-card:hover {
-    border-color: var(--primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.nav-cta:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
-.mega-menu-card-image {
-    width: 100%;
-    height: 140px;
-    background: var(--slate-100);
-    overflow: hidden;
-    border-radius: 0.5rem;
-    margin-bottom: 0.75rem;
-}
-
-.mega-menu-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mega-menu-card-text {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--slate-700);
-    text-align: center;
-    padding: 0 0.5rem 0.75rem 0.5rem;
-    line-height: 1.3;
-}
-
-.mega-menu-product-card:hover .mega-menu-card-text {
-    color: var(--primary);
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-    .mega-menu-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 1.25rem;
-    }
-    
-    .mega-menu-card-image {
-        height: 120px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mega-menu {
-        display: none; /* Hide on mobile, use mobile menu instead */
-    }
-}
-
-
-/* Mobile Menu */
-.mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 0.375rem;
-    width: 2rem;
-    height: 2rem;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.mobile-menu-btn span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: var(--slate-900);
-    transition: all var(--transition-base);
-}
-
-.mobile-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(8px);
-}
-
-.mobile-menu-btn.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-8px);
-}
-
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-base);
-}
-
-.mobile-menu.active {
-    opacity: 1;
-    visibility: visible;
-}
-
+/* Hide old navigation classes completely */
+.nav-content,
+.logo,
+.logo-icon,
+.logo-text,
+.nav-links,
+.desktop-nav,
+.mobile-menu-btn,
+.mobile-menu,
 .mobile-menu-content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    max-width: 400px;
-    height: 100%;
-    background: var(--white);
-    padding: 6rem 2rem 2rem;
-    transform: translateX(100%);
-    transition: transform var(--transition-base);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.mobile-menu.active .mobile-menu-content {
-    transform: translateX(0);
-}
-
-.mobile-menu-content a {
-    display: block;
-    padding: 1rem;
-    font-family: var(--font-system);
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--slate-700);
-    border-radius: 0.5rem;
-    transition: all var(--transition-base);
-}
-
-.mobile-menu-content a:hover,
-.mobile-menu-content a.active {
-    background: var(--slate-50);
-    color: var(--primary);
+    display: none !important;
 }
 
 /* ========================================
-   BUTTONS
-   ======================================== */
-
-.btn-primary, .btn-secondary, .btn-large, .btn-white, .btn-secondary-white {
-    display: inline-block;
-    padding: 0.875rem 2rem;
-    font-family: var(--font-system);
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
-    border-radius: 0.75rem;
-    transition: all var(--transition-base);
-    border: 2px solid transparent;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
-}
-
-.btn-secondary:hover {
-    background: var(--primary);
-    color: var(--white);
-}
-
-.btn-large {
-    padding: 1.25rem 3rem;
-    font-size: 1.125rem;
-}
-
-.btn-white {
-    background: var(--white);
-    color: var(--primary);
-}
-
-.btn-white:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-xl);
-}
-
-.btn-secondary-white {
-    background: transparent;
-    color: var(--white);
-    border-color: var(--white);
-}
-
-.btn-secondary-white:hover {
-    background: var(--white);
-    color: var(--primary);
-}
-
-/* ========================================
-   FULL-SCREEN HERO - WIX-STYLE MINIMAL
+   HERO SECTION - CENTERED & FULL SCREEN
    ======================================== */
 
 .hero-fullscreen {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: flex-start; /* Align to top instead of center */
+    align-items: center;
     justify-content: center;
-    padding-top: 25vh; /* Position text in upper third of screen */
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-video-background {
@@ -782,24 +314,25 @@ button {
     z-index: 1;
 }
 
-.hero-fullscreen-content {
+.hero-content {
     position: relative;
     z-index: 10;
     text-align: center;
     max-width: 60rem;
     padding: 2rem;
+    margin: 0 auto;
 }
 
-.hero-fullscreen-content h1 {
+.hero-content h1 {
     font-size: clamp(3rem, 8vw, 6rem);
     font-weight: 700;
-    color: var(--white);
+    color: white;
     margin-bottom: 1.5rem;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
 
-.hero-fullscreen-content p {
+.hero-content p {
     font-size: clamp(1.25rem, 3vw, 2rem);
     color: rgba(255, 255, 255, 0.9);
     line-height: 1.5;
@@ -813,11 +346,8 @@ button {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+    color: white;
     animation: bounce 2s infinite;
-}
-
-.hero-scroll-indicator svg {
-    stroke: rgba(255, 255, 255, 0.7);
 }
 
 @keyframes bounce {
@@ -832,6 +362,79 @@ button {
     }
 }
 
+/* Responsive */
+@media (max-width: 1200px) {
+    .navbar-container {
+        gap: 32px;
+        padding: 12px 24px;
+    }
+    
+    .nav-left,
+    .nav-right {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar-container {
+        gap: 20px;
+        padding: 10px 20px;
+    }
+    
+    .nav-left,
+    .nav-right {
+        gap: 16px;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+    }
+    
+    .nav-logo img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .nav-logo span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        grid-template-columns: auto 1fr auto;
+        gap: 16px;
+        padding: 10px 16px;
+    }
+    
+    .nav-left .nav-link:not(.active),
+    .nav-right .nav-link {
+        display: none;
+    }
+    
+    .nav-left,
+    .nav-right {
+        gap: 0;
+    }
+    
+    .nav-logo img {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .nav-logo span {
+        font-size: 15px;
+    }
+    
+    .nav-cta {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+    }
+}
+
 /* ========================================
    SOLUTIONS SECTION - CARDS WITH FADE IN
    ======================================== */
@@ -841,22 +444,10 @@ button {
     padding: 8rem 0;
     background: linear-gradient(
         to bottom,
-        rgba(15, 23, 42, 0.15) 0%,
-        rgba(15, 23, 42, 0.12) 3%,
-        rgba(15, 23, 42, 0.10) 6%,
-        rgba(15, 23, 42, 0.08) 9%,
-        rgba(15, 23, 42, 0.06) 12%,
-        rgba(15, 23, 42, 0.04) 16%,
-        rgba(15, 23, 42, 0.03) 20%,
-        rgba(15, 23, 42, 0.02) 24%,
-        rgba(15, 23, 42, 0.01) 28%,
-        rgba(255, 255, 255, 0.5) 35%,
-        rgba(255, 255, 255, 0.75) 42%,
-        rgba(255, 255, 255, 0.9) 50%,
-        var(--white) 60%,
+        rgba(15, 23, 42, 0.03) 0%,
+        rgba(255, 255, 255, 1) 20%,
         var(--white) 100%
     );
-    margin-top: -3px;
 }
 
 .section-header {
